@@ -1,0 +1,34 @@
+<h1>登録内容確認</h1>
+<%= form_for @user do |f| %>
+	<div class="field">
+		キャラクター名： <%= @user.name %>
+		<%= f.hidden_field :name %>
+	</div>
+	<div class="field">
+		愛称： <%= @user.nickname %>
+		<%= f.hidden_field :nickname %>
+	</div>
+	<div class="field">
+		プロフィール： <%= @user.profile %>
+		<%= f.hidden_area :profile %>
+	</div>
+	<div class="field">
+		プロフィール画像： <%= @user.prof_photo %>
+		<%= f.hidden_field :prof_photo %>
+	</div>
+	<div class="field">
+		属性： <%= @user.colors %>
+		<%= f.hidden_field :colors %>
+	</div>
+	<div class="field">
+		継続パスワード： <%= @user.name %>
+		<%= f.hidden_field :name %>
+	</div>
+	<div class="actions">
+		<%= f.submit "戻る", name: 'back' %>
+	</div>
+	<div class="action">
+		<%= f.submit "新規登録" %>
+	</div>
+
+<% end %>

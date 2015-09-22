@@ -1,2 +1,48 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<h1>新規登録</h1>
+<%= form_for User.new do |f| %>
+	<p>
+		<%= f.label :name, "キャラクター名" %>
+		<%= f.text_field :name %>
+	</p>
+	<p>
+		<%= f.label :nickname, "愛称" %>
+		<%= f.text_field :nickname %>
+	</p>
+	<p>
+		<%= f.label :profile, "プロフィール" %>
+		<%= f.text_area :profile %>
+	</p>
+	<p>
+		<%= f.label :prof_photo, "プロフィール画像" %>
+		<%= f.url_field :prof_photo %>
+	</p>
+	<p>
+		<%= f.label :colors, "属性" %>
+		<%= f.select :colors, [["白", "1"], ["黒", "2"], ["赤", "3"], ["青", "4"], ["黄", "5"], ["緑", "6"], ["橙", "7"], ["桃", "8"]], :prompt => "選択してください" %>
+	</p>
+	<p>
+		<%= f.label :str_add, "STR" %>
+		<%= f.number_field :str_add %>
+	</p>
+	<p>
+		<%= f.label :mgc_add, "MGC" %>
+		<%= f.number_field :mgc_add %>
+	</p>
+	<p>
+		<%= f.label :vit_add, "VIT" %>
+		<%= f.number_field :vit_add %>
+	</p>
+	<p>
+		<%= f.label :sns_add, "SNS" %>
+		<%= f.number_field :sns_add %>
+	</p>
+	<p>
+		<%= f.label :password, "継続パスワード（半角英数）" %>
+		<%= f.text_field :password %>
+	</p>
+	<p>
+		<%= f.label :pass_check, "パスワード確認" %>
+		<%= f.text_field :pass_check %>
+	</p>
+		<%= f.submit "新規登録" %>
+<% end %>

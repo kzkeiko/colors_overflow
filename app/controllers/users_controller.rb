@@ -9,10 +9,11 @@ class UsersController < ApplicationController
   end
 
   def character
+ 
     if params[:eno]
-      @user = User.find(:id => params[:eno])
+      @user = User.find_by(:id => params[:eno])
     elsif params[:pno]
-      @user = User.find(:pno => params[:pno])
+      @user = User.find_by(:pno => params[:pno])
     end
   end
 
@@ -27,4 +28,10 @@ class UsersController < ApplicationController
 
   def link
   end
+
+  def create
+    @user = User.new(params[:user])
+    @user.save
+  end
+  
 end

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "new" => "users#new"
   get "character/e:eno" => "users#character"
   get "character/p:pno" => "users#character"
+  post "users" => "users#create"
 
   get "map" => "users#map"
   get "result_DL" => "users#result_DL"

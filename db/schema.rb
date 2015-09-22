@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(version: 20150922085342) do
     t.string   "line"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text     "profile"
+    t.text     "prof_photo"
+    t.integer  "colors"
+    t.integer  "str_add"
+    t.integer  "mgc_add"
+    t.integer  "vit_add"
+    t.integer  "sns_add"
+    t.binary   "password"
+    t.binary   "pass_check"
   end
 
 end
