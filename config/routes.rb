@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
   get "help" => "users#help"
   get "new" => "users#new"
-  get "character/:eno" => "users#character"
+  get "character/e:eno" => "users#character"
+  get "character/p:pno" => "users#character"
 
   get "map" => "users#map"
   get "result_DL" => "users#result_DL"

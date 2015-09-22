@@ -9,22 +9,11 @@ class UsersController < ApplicationController
   end
 
   def character
-    @user = Hash.new
-    if params[:eno] =='120'
-      @user[:name] = 'GRAZIA'
-      @user[:nickname] = 'グラッツ'
-      @user[:honor] = '静寂の神騎銃士'
-      @user[:eno] = '120'
-      @user[:line] = '後衛' 
-    elsif params[:eno] == '79'
-      @user[:name] = 'ルード・F・ランプ'
-      @user[:nickname] = 'ルード'
-      @user[:honor] = '静寂の召喚神'
-      @user[:eno] = '79'
-      @user[:line] = '中衛'
+    if params[:eno]
+      @user = User.find(:id => params[:eno])
+    elsif params[:pno]
+      @user = User.find(:pno => params[:pno])
     end
-
-	
   end
 
   def map
