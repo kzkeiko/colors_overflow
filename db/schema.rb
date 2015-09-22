@@ -13,6 +13,12 @@
 
 ActiveRecord::Schema.define(version: 20150922085342) do
 
+  create_table "messages", id: false, force: :cascade do |t|
+    t.integer "msg_snd"
+    t.integer "msg_rcp"
+    t.integer "msg_cont"
+  end
+
   create_table "users", force: :cascade do |t|
     t.integer  "pno"
     t.string   "name"
@@ -30,6 +36,11 @@ ActiveRecord::Schema.define(version: 20150922085342) do
     t.integer  "sns_add"
     t.binary   "password"
     t.binary   "pass_check"
+    t.integer  "move"
+    t.binary   "message"
+    t.integer  "msg_rcp"
+    t.text     "msg_cont"
+    t.integer  "msg_snd"
   end
 
 end

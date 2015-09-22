@@ -1,0 +1,34 @@
+<h1>継続登録</h1>
+<%= form_for User.new do |f| %>
+	<h2><%= @user[:name] %></h2>
+	<p>
+		<%= f.label :password, "継続パスワード（半角英数）" %>
+		<%= f.text_field :password %>
+	</p>
+
+	<p>移動先を選択してください。</p>
+	<p>
+	<%= f.select :move, [["移動しない", "0"], ["ルベツアール渓谷", "1"], ["白眼の塔", "2"]] %>
+	</p>
+
+	<h3>メッセージ</h3>
+	<%= f.label :msg_rcp1, "E.No" %>
+	<%= f.text_field :msg_rcp1 %>
+	<%= f.label :msg_cont1, "メッセージ" %>
+	<%= f.text_area :msg_cont1 %>
+
+	<h3>プロフィール関連</h3>
+	<p>
+		<%= f.label :nickname, "愛称" %>
+		<%= f.text_field :nickname %>
+	</p>
+	<p>
+		<%= f.label :profile, "プロフィール" %>
+		<%= f.text_area :profile %>
+	</p>
+	<p>
+		<%= f.label :prof_photo, "プロフィール画像" %>
+		<%= f.url_field :prof_photo %>
+	</p>
+		<%= f.submit "継続登録" %>
+<% end %>

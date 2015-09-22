@@ -6,7 +6,7 @@
 			<table class="status">
 				<tbody>
 					<tr> <td>紅い少年</td> </tr>
-					<tr> <td><%= @user[:name] %></td> <td>継続登録</td> </tr>
+					<tr> <td><%= @user[:name] %></td> <td><%= link_to '継続登録', cont_path(@user) %></td> </tr>
 					<tr> <td>プロフィール...</td> </tr>
 					<tr> <th>愛称</th><td><%= @user[:nickname] %></td> <th>称号</th><td><%= @user[:honor] %></td> </tr>
 					<tr> <th>エントリーNo.</th><td><%= @user[:eno] %></td> <th>隊列</th><td><%= @user[:line] %></td> </tr>
