@@ -1,0 +1,15 @@
+<table>
+<caption>登録キャラクター一覧</caption>
+<tbody>
+	<tr>
+		<th>E.No</th><th>キャラクター名</th><th>愛称</th>
+	</tr>
+	<% @user.each do |user| %>
+				<tr>
+					<td><a href="../character/e<%= user.id %>"><%= user.id %></a></td>
+					<td><%= user.name %></td>
+					<td><%= user.nickname %></td>
+				</tr>
+	<% end %>
+</tbody>
+</table>

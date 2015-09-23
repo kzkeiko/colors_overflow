@@ -2,6 +2,10 @@ class UsersController < ApplicationController
   def index
   end
 
+  def char_list
+    @user = User.all
+  end
+
   def help
     
   end
@@ -41,8 +45,25 @@ class UsersController < ApplicationController
   end
 
   def create
-      @user = User.new(params[:user])
+      @user = User.new
+      @user.name = params[:user][:name]
+      @user.nickname = params[:user][:nickname]
+      @user.profile = params[:user][:profile]
+      @user.prof_photo = params[:user][:prof_photo]
+      @user.colors = params[:user][:colors]
+      @user.str_add = params[:user][:str_add]
+      @user.mgc_add = params[:user][:mgc_add]
+      @user.vit_add = params[:user][:vit_add]
+      @user.sns_add = params[:user][:sns_add]
+      
+      if (@user.password == @user.pass_check)
+        @user.password = params[:user][:password]
+      else
+        print("確認用パスワードが違います")
+        recirect_to new
+      end
       @user.save
+      redirect_to :action => "character"
   end
   
 end

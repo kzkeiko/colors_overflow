@@ -1,13 +1,19 @@
 Rails.application.routes.draw do
-  get "index" => "users#index"
+
+  get "index" => "start_pages#index"
+  get 'start_pages/map'
+
+
 
   get "help" => "users#help"
   get "new" => "users#new"
-  get "character/e:eno" => "users#character"
-  get "character/p:pno" => "users#character"
+  get "character/e:eno" => "users#character", as: "echar"
+  get "character/p:pno" => "users#character", as: "pchar"
   post "users" => "users#create"
   post "continues" => "users#save"
   get "continue/e:eno" => "users#continue", as: "cont"
+
+  get "char_list" => "users#char_list", as: "char"
 
   get "map" => "users#map"
   get "result_DL" => "users#result_DL"

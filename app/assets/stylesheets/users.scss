@@ -2,3 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.users {
+	nav#sidemenu {
+		width: 250px;
+		position: fixed;
+	}
+
+	section#rule {
+		margin-left: 250px;
+	}
+
+	article#story {
+		text-align: center;
+	}	
+}
