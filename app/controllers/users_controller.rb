@@ -2,15 +2,22 @@ class UsersController < ApplicationController
   def index
   end
 
+  def regist
+  end
+
+# ↓　新規登録実行用アクション
+  def entry
+    redirect_to '/char_list'
+  end
+
   def char_list
     @user = User.all
   end
 
   def help
-    
   end
 
-  def new
+  def new # 新規登録データを取得するとここにとぶ
   end
 
   def character # 各キャラクターページで実行
@@ -28,8 +35,8 @@ class UsersController < ApplicationController
       @user = User.find_by(:pno => params[:pno])
     end
   end
-  def save # 継続ボタンを押すと実行 
 
+  def save # 継続ボタンを押すと実行 
   end
 
   def map
@@ -60,10 +67,10 @@ class UsersController < ApplicationController
         @new.password = params[:new][:password]
       else
         print("確認用パスワードが違います")
-        recirect_to new
+        redirect_to new
       end
       @new.save
-      redirect_to :action => "character"
+      redirect_to '/index'
   end
   
 end
