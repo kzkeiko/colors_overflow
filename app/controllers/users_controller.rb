@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   end
 
   def help
+    
   end
 
   def new
