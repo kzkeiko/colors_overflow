@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  msg_snd: 
+  msg_rcp: 
+  msg_cont: MyString
+
+two:
+  msg_snd: 
+  msg_rcp: 
+  msg_cont: MyString

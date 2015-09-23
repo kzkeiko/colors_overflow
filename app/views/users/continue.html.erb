@@ -1,34 +1,42 @@
 <h1>継続登録</h1>
-<%= form_for User.new do |f| %>
+<%= form_for Continue.new do |f| %>
 	<h2><%= @user[:name] %></h2>
 	<p>
-		<%= f.label :password, "継続パスワード（半角英数）" %>
-		<%= f.text_field :password %>
+	<%= fields_for User.new do |u| %>
+		<%= u.label :nickname, "継続パスワード（半角英数）" %>
+		<%= u.text_field :nickname %>
+	<% end %>
 	</p>
-
+<!--
 	<p>移動先を選択してください。</p>
 	<p>
-	<%= f.select :move, [["移動しない", "0"], ["ルベツアール渓谷", "1"], ["白眼の塔", "2"]] %>
+	<%= f.select :profile, [["移動しない", "0"], ["ルベツアール渓谷", "1"], ["白眼の塔", "2"]] %>
 	</p>
 
 	<h3>メッセージ</h3>
-	<%= f.label :msg_rcp, "E.No" %>
-	<%= f.text_field :msg_rcp %>
-	<%= f.label :msg_cont, "メッセージ" %>
-	<%= f.text_area :msg_cont %>
+	<%= fields_for Message.new do |m| %>
+		<%= m.label :msg_rcp, "E.No" %>
+		<%= m.text_field :msg_rcp %>
+		<%= m.label :msg_rcp, "メッセージ" %>
+		<%= m.text_area :msg_rcp %>
+	<% end %>
 
 	<h3>プロフィール関連</h3>
+-->
+
 	<p>
 		<%= f.label :nickname, "愛称" %>
 		<%= f.text_field :nickname %>
 	</p>
+<!--
 	<p>
 		<%= f.label :profile, "プロフィール" %>
 		<%= f.text_area :profile %>
 	</p>
 	<p>
-		<%= f.label :prof_photo, "プロフィール画像" %>
-		<%= f.url_field :prof_photo %>
+		<%= f.label :profile, "プロフィール画像" %>
+		<%= f.url_field :profile %>
 	</p>
+-->
 		<%= f.submit "継続登録" %>
 <% end %>

@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   def new
   end
 
-  def character
+  def character # 各キャラクターページで実行
     if params[:eno]
       @user = User.find_by(:id => params[:eno])
     elsif params[:pno]
@@ -17,12 +17,15 @@ class UsersController < ApplicationController
     end
   end
 
-  def continue
+  def continue # continue/e__ にとんだら実行
     if params[:eno]
       @user = User.find_by(:id => params[:eno])
     elsif params[:pno]
       @user = User.find_by(:pno => params[:pno])
     end
+  end
+  def save # 継続ボタンを押すと実行 
+
   end
 
   def map

@@ -11,12 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150922085342) do
+ActiveRecord::Schema.define(version: 20150923025254) do
 
-  create_table "messages", id: false, force: :cascade do |t|
-    t.integer "msg_snd"
-    t.integer "msg_rcp"
-    t.integer "msg_cont"
+  create_table "continues", force: :cascade do |t|
+    t.string   "nickname"
+    t.string   "profile"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.integer  "msg_snd"
+    t.integer  "msg_rcp"
+    t.string   "msg_cont"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

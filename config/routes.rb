@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get "character/e:eno" => "users#character"
   get "character/p:pno" => "users#character"
   post "users" => "users#create"
+  post "continues" => "users#save"
   get "continue/e:eno" => "users#continue", as: "cont"
 
   get "map" => "users#map"
