@@ -45,23 +45,37 @@ ActiveRecord::Schema.define(version: 20150923102643) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.binary   "password"
+    t.binary   "pass_check"
     t.integer  "pno"
     t.string   "name"
     t.string   "nickname"
     t.string   "honor"
-    t.string   "line"
     t.text     "profile"
     t.text     "prof_photo"
     t.integer  "colors"
-    t.integer  "str_add"
-    t.integer  "mgc_add"
-    t.integer  "vit_add"
-    t.integer  "sns_add"
-    t.binary   "password"
-    t.binary   "pass_check"
-    t.integer  "location"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "line"
+    t.integer  "lv"
+    t.integer  "exp"
+    t.integer  "karma"
+    t.integer  "str"
+    t.integer  "mgc"
+    t.integer  "vit"
+    t.integer  "sns"
+    t.text     "location"
+    t.integer  "money"
+    t.integer  "hp"
+    t.integer  "mhp"
+    t.integer  "mp"
+    t.integer  "mmp"
+    t.text     "equip_left"
+    t.text     "equip_right"
+    t.text     "equip_body"
+    t.text     "equip_acc1"
+    t.text     "equip_acc2"
+    t.text     "equip_acc3"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end
