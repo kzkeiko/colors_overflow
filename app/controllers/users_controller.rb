@@ -45,24 +45,24 @@ class UsersController < ApplicationController
   end
 
   def create
-      @user = User.new
-      @user.name = params[:user][:name]
-      @user.nickname = params[:user][:nickname]
-      @user.profile = params[:user][:profile]
-      @user.prof_photo = params[:user][:prof_photo]
-      @user.colors = params[:user][:colors]
-      @user.str_add = params[:user][:str_add]
-      @user.mgc_add = params[:user][:mgc_add]
-      @user.vit_add = params[:user][:vit_add]
-      @user.sns_add = params[:user][:sns_add]
+      @new = New.new
+      @new.name = params[:new][:name]
+      @new.nickname = params[:new][:nickname]
+      @new.profile = params[:new][:profile]
+      @new.prof_photo = params[:new][:prof_photo]
+      @new.colors = params[:new][:colors]
+      @new.str_add = params[:new][:str_add]
+      @new.mgc_add = params[:new][:mgc_add]
+      @new.vit_add = params[:new][:vit_add]
+      @new.sns_add = params[:new][:sns_add]
       
-      if (@user.password == @user.pass_check)
-        @user.password = params[:user][:password]
+      if (@new.password == @new.pass_check)
+        @new.password = params[:new][:password]
       else
         print("確認用パスワードが違います")
         recirect_to new
       end
-      @user.save
+      @new.save
       redirect_to :action => "character"
   end
   

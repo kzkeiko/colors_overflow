@@ -9,7 +9,8 @@ Rails.application.routes.draw do
   get "new" => "users#new"
   get "character/e:eno" => "users#character", as: "echar"
   get "character/p:pno" => "users#character", as: "pchar"
-  post "users" => "users#create"
+
+  post "news" => "users#create"
   post "continues" => "users#save"
   get "continue/e:eno" => "users#continue", as: "cont"
 
