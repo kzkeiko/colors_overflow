@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get "index" => "users#index"
+  get "index" => "start_pages#index"
 
   get "help" => "users#help"
   get "new" => "users#new"
