@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class StartPagesControllerTest < ActionController::TestCase
+<<<<<<< HEAD
   test "should get index" do
     get :index
     assert_response :success
@@ -11,4 +12,9 @@ class StartPagesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
+=======
+  # test "the truth" do
+  #   assert true
+  # end
+>>>>>>> New_Model
 end

@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
 
   get "index" => "start_pages#index"
   get 'start_pages/map'
 
 
+=======
+  get "index" => "start_pages#index"
+>>>>>>> New_Model
 
   get "help" => "users#help"
   get "new" => "users#new"
