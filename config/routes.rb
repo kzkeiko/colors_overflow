@@ -1,13 +1,7 @@
 Rails.application.routes.draw do
 
-  post "new" => "users#new" # 
-
   get "index" => "start_pages#index"
   get 'start_pages/map'
-
-  get "new_entry" => "users#regist" # 新規登録実行ページ
-  post "entry" => "user#index" # 新規登録を実行したらここにとぶ
-
   get "index" => "start_pages#index"
 
   get "help" => "users#help"

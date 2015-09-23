@@ -2,14 +2,6 @@ class UsersController < ApplicationController
   def index
   end
 
-  def regist
-  end
-
-# ↓　新規登録実行用アクション
-  def entry
-    redirect_to '/char_list'
-  end
-
   def char_list
     @user = User.all
   end
