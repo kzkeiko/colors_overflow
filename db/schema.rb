@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150923025254) do
+ActiveRecord::Schema.define(version: 20150923102643) do
 
   create_table "continues", force: :cascade do |t|
     t.string   "nickname"
@@ -28,14 +28,28 @@ ActiveRecord::Schema.define(version: 20150923025254) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "news", force: :cascade do |t|
+    t.string   "name"
+    t.string   "nickname"
+    t.text     "profile"
+    t.string   "prof_photo"
+    t.integer  "colors"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "str_add"
+    t.integer  "mgc_add"
+    t.integer  "vit_add"
+    t.integer  "sns_add"
+    t.text     "password"
+    t.text     "pass_check"
+  end
+
   create_table "users", force: :cascade do |t|
     t.integer  "pno"
     t.string   "name"
     t.string   "nickname"
     t.string   "honor"
     t.string   "line"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.text     "profile"
     t.text     "prof_photo"
     t.integer  "colors"
@@ -45,11 +59,9 @@ ActiveRecord::Schema.define(version: 20150923025254) do
     t.integer  "sns_add"
     t.binary   "password"
     t.binary   "pass_check"
-    t.integer  "move"
-    t.binary   "message"
-    t.integer  "msg_rcp"
-    t.text     "msg_cont"
-    t.integer  "msg_snd"
+    t.integer  "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
