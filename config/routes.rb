@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root 'start_pages#index'
+
   get "index" => "start_pages#index"
   get 'start_pages/map'
   get "index" => "start_pages#index"
