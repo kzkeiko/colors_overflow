@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'errors/error_404'
+
+  get 'errors/error_500'
+
 #  root 'start_pages#index'
 
   get "index" => "start_pages#index"
@@ -17,10 +21,10 @@ Rails.application.routes.draw do
 
   get "char_list" => "users#char_list", as: "char"
 
-  get "map" => "users#map"
-  get "result_DL" => "users#result_DL"
-  get "bbs" => "users#bbs"
-  get "link" => "users#link"
+ # get "map" => "users#map"
+ # get "result_DL" => "users#result_DL"
+ # get "bbs" => "users#bbs"
+ # get "link" => "users#link"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
